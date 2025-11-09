@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres
+    container_name: Marmitax-db
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./Marmiton-Back/initdb:/docker-entrypoint-initdb.d
+      - db-data:/var/lib/postgresql
+
+  backend:
+    build: ./Marmiton-Back
+    container_name: Marmitax-backend
+    ports:
+      - "3000:8080"
+    env_file:
+      - ./Marmiton-Back/.env
+    environment:
+      - CORS_ORIGIN=http://localhost:4173
+      - HOST=db
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./Marmiton-Front
+    container_name: Marmitax-frontend
+    ports:
+      - "4173:80"
+    depends_on:
+      - backend
+
+volumes:
+  db-data:
