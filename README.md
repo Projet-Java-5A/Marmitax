@@ -8,11 +8,11 @@ This is a recipe application with a frontend, a backend, and a database.
 
 ## Lancer le projet
 
-Le gide d'instalation pour lancer les parties de l'application sont dans les readme de ces derniers.
+Le guide d'installation pour lancer les parties de l'application sont dans les readme de ces derniers.
 
 ### Avant de lancer le projet
 
-Créer et remplire le .env à partir du message moodle. (Ils ont été enlevé du .gitignore, donc pas besoin, mais je le remets la au cas où)
+Créer et remplire le .env à partir du message moodle.
 
 ```bash
 DATABASE_USER = "marmitax"
@@ -32,7 +32,6 @@ This will build the Docker images for the frontend and backend services and star
 
 ### Acceder à l'application
 
-
 #### Frontend
 
  Le front est sur `http://localhost:4173`
@@ -50,9 +49,8 @@ On peut consulter les recettes.
 ### User
 
 On peut consulter et créer des recettes.
-On peut modifier et supprimer ses recettes.
 
-### Admnin
+### Admin
 
 On peut consulter, créer et supprimer des recettes
 On a accès à la page admin où on peut valider les recettes en attente
@@ -65,7 +63,7 @@ mdp   : arthur
 
 ## Arreter le projet
 
-Pour areter le projet et supprimer containers, images et volumes (supprimer les images ralentie grandement le temps de lancement, ne pas mettre les flags --rmi all si vous compter relancer) :
+Pour arrêter le projet et supprimer containers, images et volumes (supprimer les images ralentie grandement le temps de lancement, ne pas mettre les flags --rmi all si vous compter relancer) :
 
 ```bash
 docker compose down -v --rmi 'all'
