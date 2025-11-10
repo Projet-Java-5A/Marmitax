@@ -22,13 +22,13 @@ DATABASE_PASSWORD = "marmitax"
 
 ### Build l'application
 
-Open a terminal at the root of the project and run the following command:
+Ouvrir un terminal à la racine du projet et run la commande suivante :
 
 ```bash
 docker compose up -d --build
 ```
 
-This will build the Docker images for the frontend and backend services and start all the containers in detached mode.
+Cela va créer les images Docker pour le front et le back et démarrer les containers en mode détaché.
 
 ### Acceder à l'application
 
